@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="460.0" prefWidth="510.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.ingesis.javafx.ejemplo.controllers.PersonaController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Label text="Número de Identificación:" />
+        <Label text="Nombre:" GridPane.rowIndex="1" />
+        <Label text="Apellido:" GridPane.rowIndex="2" />
+        <Label text="Fecha de nacimiento" GridPane.rowIndex="3" />
+        <Label text="Clase viajera" GridPane.rowIndex="4" />
+
+        <TextField fx:id="tfNumeroIdentificacion" GridPane.columnIndex="1" />
+        <TextField fx:id="tfNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="tfApellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <DatePicker fx:id="tfFecha" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <ComboBox fx:id="tfClase" accessibleHelp="ssss" accessibleText="as" prefWidth="190.0" promptText="Seleccione una option" visibleRowCount="6" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    </GridPane>
+    <HBox prefHeight="41.0" prefWidth="301.0">
+        <Button mnemonicParsing="false" onAction="#onGuardarClick" text="Guardar" />
+        <Button mnemonicParsing="false" onAction="#onCancelarClick" text="Cancelar" />
+        <Button mnemonicParsing="false" onAction="#onRemoverClick" text="Remover" />
+        <Button mnemonicParsing="false" onAction="#onBuscarClick" text="Buscar" />
+    </HBox>
+    <TableView fx:id="tblPersonas" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+            <TableColumn fx:id="colNumeroIdentificacion" prefWidth="126.0" text="Número Identificación" />
+            <TableColumn fx:id="colNombre" prefWidth="98.0" text="Nombre" />
+            <TableColumn fx:id="colApellido" prefWidth="73.0" text="Apellido" />
+         <TableColumn fx:id="colFecha" prefWidth="73.0" text="Fecha de N" />
+         <TableColumn fx:id="colClase" prefWidth="98.0" text="Clase viajera" />
+        </columns>
+    </TableView>
+</VBox>
